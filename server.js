@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 
 const hospitals = require("./routes/hospitals");
+const appointments = require("./routes/appointments");
 const auth = require("./routes/auth");
 const connectDB = require("./config/db");
 
@@ -14,6 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/v1/hospitals", hospitals);
+app.use("/api/v1/appointments", appointments);
 app.use("/api/v1/auth", auth);
 
 const PORT = process.env.PORT || 5000;
