@@ -45,7 +45,7 @@ exports.getAppointment = async (req, res, next) => {
   try {
     const appointment = await Appointment.findById(req.params.id).populate({
       path: "hospital",
-      select: "name description tel",
+      select: "name province tel",
     });
 
     if (!appointment) {
